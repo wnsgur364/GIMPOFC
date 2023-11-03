@@ -1,4 +1,4 @@
-package com.podo.board;
+package com.orange.board;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

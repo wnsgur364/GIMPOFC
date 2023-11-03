@@ -1,4 +1,4 @@
-package com.podo.board.controller;
+package com.orange.board.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
