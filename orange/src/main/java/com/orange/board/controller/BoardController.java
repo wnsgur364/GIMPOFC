@@ -30,7 +30,7 @@ public class BoardController {
 
     @GetMapping("/save")
     public String saveForm() {
-        return "save";
+        return "board/save";
     }
 
     @PostMapping("/save")
@@ -45,7 +45,7 @@ public class BoardController {
         // DB에서 전체 게시글 데이터를 가져와서 list.html에 보여준다.
         List<BoardDTO> boardDTOList = boardService.findAll();
         model.addAttribute("boardList", boardDTOList);
-        return "list";
+        return "board/list";
     }
 
     @GetMapping("/{id}")
@@ -62,21 +62,21 @@ public class BoardController {
         model.addAttribute("commentList", commentDTOList);
         model.addAttribute("board", boardDTO);
         model.addAttribute("page", pageable.getPageNumber());
-        return "detail";
+        return "board/detail";
     }
 
     @GetMapping("/update/{id}")
     public String updateForm(@PathVariable Long id, Model model) {
         BoardDTO boardDTO = boardService.findById(id);
         model.addAttribute("boardUpdate", boardDTO);
-        return "update";
+        return "board/update";
     }
 
     @PostMapping("/update")
     public String update(@ModelAttribute BoardDTO boardDTO, Model model) {
         BoardDTO board = boardService.update(boardDTO);
         model.addAttribute("board", board);
-        return "detail";
+        return "board/detail";
 //        return "redirect:/board/" + boardDTO.getId();
     }
 
@@ -106,7 +106,7 @@ public class BoardController {
         model.addAttribute("boardList", boardList);
         model.addAttribute("startPage", startPage);
         model.addAttribute("endPage", endPage);
-        return "paging";
+        return "board/paging";
 
     }
 
