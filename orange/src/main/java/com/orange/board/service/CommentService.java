@@ -37,7 +37,7 @@ public class CommentService {
         List<CommentEntity> commentEntityList = commentRepository.findAllByBoardEntityOrderByIdDesc(boardEntity);
         /* EntityList -> DTOList */
         List<CommentDTO> commentDTOList = new ArrayList<>();
-        for (CommentEntity commentEntity : commentEntityList) {
+        for (CommentEntity commentEntity: commentEntityList) {
             CommentDTO commentDTO = CommentDTO.toCommentDTO(commentEntity, boardId);
             commentDTOList.add(commentDTO);
         }

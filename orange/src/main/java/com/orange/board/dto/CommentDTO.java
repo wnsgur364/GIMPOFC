@@ -1,7 +1,9 @@
 package com.orange.board.dto;
 
 import java.time.LocalDateTime;
+
 import com.orange.board.entity.CommentEntity;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
